@@ -1,0 +1,18 @@
+<section id="todoapp" ng-controller="TodoCtrl">
+  <header id="header">
+    <form id="todo-form" ng-submit="addTodo()">
+      <input id="new-todo" placeholder="Вставте ваше сообщение тут" ng-model="newTodo" autofocus>
+    </form>
+  </header>
+  <section id="main" ng-show="todos.length" ng-cloak>
+    <ul id="todo-list">
+      <li ng-repeat="todo in todos" ng-class="{editing: todo == editedTodo}">
+        <div class="view">
+          <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+          <button class="destroy" ng-click="removeTodo(todo)">Удалить</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</section>
